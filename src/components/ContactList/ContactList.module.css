@@ -20,13 +20,18 @@
 }
 
 .textItem,
-.textNoContacts {
+.textNoContacts,
+.tel {
   color: gray;
   font-size: 16px;
 }
 
 .textNoContacts {
   text-align: center;
+}
+
+.tel {
+  text-decoration-line: none;
 }
 
 .buttonDelete {

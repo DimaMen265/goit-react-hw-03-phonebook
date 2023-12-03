@@ -12,7 +12,7 @@ export class ContactList extends Component {
                             <li key={item.id}>
                                 <div className={styles.wrapperItem}>
                                     <p className={styles.textItem}>
-                                        {item.name}: {item.number}
+                                        {item.name}: <a href={`tel:${item.number}`} className={styles.tel} >{item.number}</a> 
                                     </p>
                                     
                                     <button onClick={() => this.props.onDelete(item.id)} className={styles.buttonDelete}>Delete</button>
