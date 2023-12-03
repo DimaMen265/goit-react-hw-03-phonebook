@@ -66,7 +66,7 @@ export class ContactForm extends Component {
                         />
                         <ErrorMessage name="number">
                             {() => (
-                                <p className={styles.errorText}>Phone number must be digits and can contain spaces, dashes, parentheses and can start with +</p>
+                                <p className={styles.errorText}>The phone number must consist of numbers and cannot contain spaces, dashes, round brackets and must begin with +</p>
                             )}
                         </ErrorMessage>
 
