@@ -10,6 +10,21 @@ export class App extends Component {
     filter: "",
   };
 
+  componentDidMount() {
+    let contacts = localStorage.getItem("contacts");
+    if (contacts) {
+      this.setState({ contacts: JSON.parse(contacts) });
+    } else {
+      this.setState({ contacts: [] });
+    };
+  };
+
+  componentDidUpdate(prevState) {
+    if ((prevState.contacts ?? []).length !== this.state.contacts.length) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+    };
+  };
+
   handleAddContact = contact => {
     this.setState(prev => {
       return { contacts: prev.contacts.concat(contact), name: "", number: "" };
